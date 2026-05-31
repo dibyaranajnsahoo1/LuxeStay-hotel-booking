@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FiArrowRight, FiArrowLeft, FiCheckCircle, FiMapPin, FiCalendar, FiUsers, FiStar } from 'react-icons/fi'
+import { FiArrowRight, FiArrowLeft, FiCheckCircle, FiMapPin, FiCalendar, FiUsers } from 'react-icons/fi'
 import { nextStep, prevStep, setGuestDetails, setAddOns } from '../../store/slices/bookingSlice'
 
 // ===================== STEP 1: ROOM SELECT =====================
 export function StepRoomSelect() {
   const dispatch = useDispatch()
-  const { selectedRoom, searchData, pricing } = useSelector((s) => s.booking)
+  const { selectedRoom, searchData } = useSelector((s) => s.booking)
   if (!selectedRoom) return null
   const effectivePrice = selectedRoom.pricePerNight * (1 - selectedRoom.discountPercent / 100)
   const nights = searchData.checkIn && searchData.checkOut
@@ -211,7 +211,7 @@ export function StepAddOns() {
             >
               {isSelected && (
                 <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-primary-500 flex items-center justify-center">
-                  <FiCheckCircle className="w-3.5 h-3.5 text-dark-950" />
+                  <FiCheckCircle className="w-3.5 h-3.5 text-[#0a0a0f]" />
                 </div>
               )}
               <span className="text-3xl mb-3 block">{addon.icon}</span>

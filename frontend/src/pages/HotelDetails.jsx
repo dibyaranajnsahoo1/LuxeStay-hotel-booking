@@ -2,15 +2,13 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'
-import 'swiper/css'; import 'swiper/css/navigation'; import 'swiper/css/pagination'
-import { FiMapPin, FiStar, FiWifi, FiDroplet, FiCheckCircle, FiPhone, FiMail, FiHeart, FiShare2, FiArrowLeft, FiUsers, FiInfo } from 'react-icons/fi'
+
+import { FiMapPin, FiStar, FiCheckCircle, FiPhone, FiMail, FiHeart, FiShare2, FiArrowLeft, FiInfo } from 'react-icons/fi'
 import { fetchHotel } from '../store/slices/hotelSlice'
 import { toggleWishlist } from '../store/slices/authSlice'
 import { setSearchData } from '../store/slices/bookingSlice'
 import api from '../services/api'
-import { SkeletonCard } from '../components/common/ProtectedRoute'
+
 import toast from 'react-hot-toast'
 
 const POLICY_ICONS = { checkIn: '🕑', checkOut: '🕐', cancellation: '📋', pets: '🐾', smoking: '🚭' }
@@ -238,7 +236,7 @@ export default function HotelDetails() {
           <div className="lg:col-span-1">
             <div className="sticky top-24 glass p-6">
               <h3 className="font-display text-xl text-white mb-1">Reserve Your Stay</h3>
-              <p className="text-dark-400 text-sm mb-5">Starting from <span className="text-primary-400 font-semibold">₹{hotel.priceRange?.min?.toLocaleString('en-IN')}/night</span></p>
+              <p className="text-dark-400 text-sm mb-5">Starting from <span className="text-dark-400 font-semibold">₹{hotel.priceRange?.min?.toLocaleString('en-IN')}/night</span></p>
               <div className="space-y-3 mb-5">
                 <div>
                   <label className="label text-xs">Check-in</label>

@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { motion } from 'framer-motion'
+
 import {
-  AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid,
+  AreaChart, Area, XAxis, YAxis, CartesianGrid,
   Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend
 } from 'recharts'
 import {
   FiGrid, FiBookOpen, FiUsers, FiTag, FiLogOut,
   FiTrendingUp, FiTrendingDown, FiDollarSign, FiStar,
-  FiMenu, FiX, FiChevronRight, FiRefreshCw, FiAlertCircle
+  FiMenu, FiChevronRight, FiRefreshCw
 } from 'react-icons/fi'
 import { logout } from '../../store/slices/authSlice'
 import api from '../../services/api'
-import { Spinner } from '../../components/common/ProtectedRoute'
+
 import ThemeToggle from '../../components/common/ThemeToggle'
 import AdminRooms from './AdminRooms'
 import AdminBookings from './AdminBookings'
@@ -267,7 +267,7 @@ export default function AdminDashboard() {
           <div className="p-5 border-b border-dark-800">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-gold-gradient flex items-center justify-center">
-                <span className="font-display font-bold text-dark-950 text-sm">L</span>
+                <span className="font-display font-bold text-[#0a0a0f] text-sm">L</span>
               </div>
               <div>
                 <span className="font-display text-lg font-semibold text-white">LuxeStay</span>

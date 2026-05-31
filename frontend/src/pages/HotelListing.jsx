@@ -259,7 +259,7 @@ export default function HotelListing() {
                     key={p}
                     onClick={() => setFilters((prev) => ({ ...prev, page: p }))}
                     className={`w-10 h-10 rounded-xl text-sm font-medium transition-all ${
-                      filters.page === p ? 'bg-primary-500 text-dark-950' : 'bg-dark-800 border border-dark-700 text-dark-400 hover:border-dark-500 hover:text-white'
+                      filters.page === p ? 'bg-primary-500 text-[#0a0a0f]' : 'bg-dark-800 border border-dark-700 text-dark-400 hover:border-dark-500 hover:text-white'
                     }`}
                   >
                     {p}

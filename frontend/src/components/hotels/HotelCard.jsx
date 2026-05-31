@@ -2,11 +2,10 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
-import { FiMapPin, FiStar, FiHeart, FiWifi, FiDroplet, FiUsers } from 'react-icons/fi'
+import { FiMapPin, FiStar, FiHeart } from 'react-icons/fi'
 import { toggleWishlist } from '../../store/slices/authSlice'
 import toast from 'react-hot-toast'
 
-const AMENITY_ICONS = { 'Free WiFi': FiWifi, 'Swimming Pool': FiDroplet, 'Gym': FiUsers }
 
 export default function HotelCard({ hotel, className = '' }) {
   const dispatch = useDispatch()
@@ -118,7 +117,7 @@ export default function HotelCard({ hotel, className = '' }) {
             <div>
               <span className="text-xs text-dark-500">Starting from</span>
               <div className="flex items-baseline gap-1">
-                <span className="text-2xl font-bold text-white">
+                <span className="text-2xl font-bold text-dark-300">
                   ₹{discountedPrice?.toLocaleString('en-IN') || '8,999'}
                 </span>
                 <span className="text-dark-500 text-xs">/night</span>

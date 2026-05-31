@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
 import { FiSearch, FiMapPin, FiCalendar, FiUsers, FiStar, FiArrowRight, FiShield, FiAward, FiClock, FiHeart } from 'react-icons/fi'
@@ -62,7 +62,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen home-page">
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
@@ -229,9 +229,9 @@ export default function Home() {
               <h2 className="section-title">Featured <em>Hotels</em></h2>
               <p className="section-subtitle">Extraordinary experiences await at India's most iconic properties</p>
             </div>
-            <a href="/hotels" className="btn-secondary hidden md:flex items-center gap-2 text-sm">
+            <Link to="/hotels" className="btn-secondary hidden md:flex items-center gap-2 text-sm">
               View All <FiArrowRight />
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -264,15 +264,15 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {POPULAR_DESTINATIONS.map((dest, i) => (
-              <motion.a
+              <motion.div
                 key={dest.city}
-                href={`/hotels?city=${dest.city}`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
                 whileHover={{ scale: 1.05 }}
                 className="group relative rounded-2xl overflow-hidden aspect-[3/4] cursor-pointer"
+                onClick={() => navigate(`/hotels?city=${dest.city}`)}
               >
                 <img src={dest.image} alt={dest.city} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/20 to-transparent" />
@@ -280,7 +280,7 @@ export default function Home() {
                   <p className="font-display text-white font-medium text-lg leading-none">{dest.city}</p>
                   <p className="text-primary-300 text-xs mt-1">{dest.hotels} hotels</p>
                 </div>
-              </motion.a>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -329,8 +329,8 @@ export default function Home() {
               <h2 className="font-display text-4xl md:text-5xl text-white mb-4">Ready for Your <em className="text-gradient">Dream</em> Vacation?</h2>
               <p className="text-dark-400 mb-8 max-w-xl mx-auto">Join 50,000+ travelers who trust LuxeStay for their premium stays. Use code <span className="text-primary-400 font-semibold">WELCOME20</span> for 20% off your first booking.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/hotels" className="btn-primary px-8 py-4 text-base">Explore Hotels</a>
-                <a href="/register" className="btn-secondary px-8 py-4 text-base">Sign Up Free</a>
+                <Link to="/hotels" className="btn-primary px-8 py-4 text-base">Explore Hotels</Link>
+                <Link to="/register" className="btn-secondary px-8 py-4 text-base">Sign Up Free</Link>
               </div>
             </div>
           </motion.div>

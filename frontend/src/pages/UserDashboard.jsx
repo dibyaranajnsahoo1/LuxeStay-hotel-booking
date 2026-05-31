@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { motion } from 'framer-motion'
-import { FiBookOpen, FiHeart, FiUser, FiCreditCard, FiLogOut, FiCalendar, FiMapPin, FiChevronRight, FiEdit3, FiSave, FiX } from 'react-icons/fi'
+
+import { FiBookOpen, FiHeart, FiUser, FiLogOut, FiCalendar, FiMapPin, FiChevronRight, FiEdit3, FiSave, FiX } from 'react-icons/fi'
 import { logout, updateProfile } from '../store/slices/authSlice'
 import api from '../services/api'
 import { Spinner } from '../components/common/ProtectedRoute'
@@ -114,7 +114,7 @@ function Wishlist() {
     } else {
       setLoading(false)
     }
-  }, [])
+  }, [user?.wishlist?.length])
 
   if (loading) return <div className="flex justify-center py-20"><Spinner size="lg" /></div>
 

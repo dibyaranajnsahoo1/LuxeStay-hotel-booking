@@ -14,7 +14,7 @@ export default function NotFound() {
           <div className="font-display text-[180px] leading-none font-bold text-dark-900 select-none">404</div>
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-24 h-24 rounded-3xl bg-gold-gradient flex items-center justify-center shadow-glow">
-              <span className="font-display text-4xl text-dark-950">?</span>
+              <span className="font-display text-4xl text-[#0a0a0f]">?</span>
             </div>
           </div>
         </div>

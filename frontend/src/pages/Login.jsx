@@ -15,7 +15,7 @@ function AuthLayout({ children, title, subtitle, image }) {
         <div className="absolute inset-0 flex flex-col justify-end p-12">
           <Link to="/" className="flex items-center gap-2 mb-auto mt-8">
             <div className="w-8 h-8 rounded-lg bg-gold-gradient flex items-center justify-center">
-              <span className="font-display font-bold text-dark-950 text-sm">L</span>
+              <span className="font-display font-bold text-[#0a0a0f] text-sm">L</span>
             </div>
             <span className="font-display text-2xl font-semibold text-white">Luxe<span className="text-gradient">Stay</span></span>
           </Link>
@@ -32,7 +32,7 @@ function AuthLayout({ children, title, subtitle, image }) {
           <div className="lg:hidden mb-8">
             <Link to="/" className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-gold-gradient flex items-center justify-center">
-                <span className="font-display font-bold text-dark-950 text-sm">L</span>
+                <span className="font-display font-bold text-[#0a0a0f] text-sm">L</span>
               </div>
               <span className="font-display text-2xl font-semibold text-white">Luxe<span className="text-gradient">Stay</span></span>
             </Link>

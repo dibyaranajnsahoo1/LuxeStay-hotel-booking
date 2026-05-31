@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { motion } from 'framer-motion'
+
 import { FiArrowLeft, FiTag, FiShield, FiCheckCircle, FiAlertCircle } from 'react-icons/fi'
 import { prevStep, setCoupon, setCurrentBooking } from '../../store/slices/bookingSlice'
 import api from '../../services/api'
@@ -10,8 +10,7 @@ import toast from 'react-hot-toast'
 export default function StepSummary() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const { selectedRoom, searchData, guestDetails, addOns, pricing, coupon } = useSelector((s) => s.booking)
-  const { user } = useSelector((s) => s.auth)
+  const { selectedRoom, searchData, guestDetails, addOns, coupon } = useSelector((s) => s.booking)
 
   const [couponCode, setCouponCode] = useState(coupon?.code || '')
   const [couponLoading, setCouponLoading] = useState(false)
