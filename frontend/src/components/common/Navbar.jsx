@@ -56,7 +56,7 @@ export default function Navbar() {
     ? 'bg-transparent'
     : isDarkMode
       ? 'bg-[#0a0a0f]/95 backdrop-blur-xl border-b border-[#252535]'
-      : 'bg-white/95 backdrop-blur-xl border-b border-[#dddde8] shadow-sm'
+      : 'bg-white border-b border-[#dddde8] shadow-sm'
 
   return (
     <motion.nav
