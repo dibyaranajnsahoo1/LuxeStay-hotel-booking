@@ -100,20 +100,6 @@ export function StepGuestDetails() {
     dispatch(nextStep())
   }
 
-  const Field = ({ name, label, type = 'text', placeholder, half }) => (
-    <div className={half ? 'flex-1 min-w-0' : 'w-full'}>
-      <label className="label">{label}</label>
-      <input
-        type={type}
-        placeholder={placeholder}
-        value={form[name]}
-        onChange={(e) => { setForm((p) => ({ ...p, [name]: e.target.value })); setErrors((p) => ({ ...p, [name]: '' })) }}
-        className={`input-field ${errors[name] ? 'border-red-500' : ''}`}
-      />
-      {errors[name] && <p className="text-red-400 text-xs mt-1">{errors[name]}</p>}
-    </div>
-  )
-
   return (
     <div className="max-w-2xl mx-auto">
       <h2 className="font-display text-3xl text-white mb-2">Guest Details</h2>
@@ -121,11 +107,27 @@ export function StepGuestDetails() {
 
       <div className="glass p-6 space-y-4 mb-6">
         <div className="flex gap-4">
-          <Field name="firstName" label="First Name" placeholder="John" half />
-          <Field name="lastName" label="Last Name" placeholder="Doe" half />
+          <div className="flex-1 min-w-0">
+            <label className="label">First Name</label>
+            <input type="text" placeholder="John" value={form.firstName} onChange={(e) => { setForm((p) => ({ ...p, firstName: e.target.value })); setErrors((p) => ({ ...p, firstName: '' })) }} className={`input-field ${errors.firstName ? 'border-red-500' : ''}`} />
+            {errors.firstName && <p className="text-red-400 text-xs mt-1">{errors.firstName}</p>}
+          </div>
+          <div className="flex-1 min-w-0">
+            <label className="label">Last Name</label>
+            <input type="text" placeholder="Doe" value={form.lastName} onChange={(e) => { setForm((p) => ({ ...p, lastName: e.target.value })); setErrors((p) => ({ ...p, lastName: '' })) }} className={`input-field ${errors.lastName ? 'border-red-500' : ''}`} />
+            {errors.lastName && <p className="text-red-400 text-xs mt-1">{errors.lastName}</p>}
+          </div>
         </div>
-        <Field name="email" label="Email Address" type="email" placeholder="john@example.com" />
-        <Field name="phone" label="Phone Number" type="tel" placeholder="9876543210" />
+        <div className="w-full">
+          <label className="label">Email Address</label>
+          <input type="email" placeholder="john@example.com" value={form.email} onChange={(e) => { setForm((p) => ({ ...p, email: e.target.value })); setErrors((p) => ({ ...p, email: '' })) }} className={`input-field ${errors.email ? 'border-red-500' : ''}`} />
+          {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
+        </div>
+        <div className="w-full">
+          <label className="label">Phone Number</label>
+          <input type="tel" placeholder="9876543210" value={form.phone} onChange={(e) => { setForm((p) => ({ ...p, phone: e.target.value })); setErrors((p) => ({ ...p, phone: '' })) }} className={`input-field ${errors.phone ? 'border-red-500' : ''}`} />
+          {errors.phone && <p className="text-red-400 text-xs mt-1">{errors.phone}</p>}
+        </div>
         <div>
           <label className="label">Expected Arrival Time (Optional)</label>
           <select value={form.arrivalTime} onChange={(e) => setForm((p) => ({ ...p, arrivalTime: e.target.value }))} className="input-field">

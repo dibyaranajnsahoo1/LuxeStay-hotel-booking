@@ -259,12 +259,8 @@ html.dark {
   /* ---- LAYOUT ---- */
   .page-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
 
-  /* Preserve white text in hero, destination cards, and CTA sections for both themes */
-  html.light .home-page section:first-of-type .text-white,
-  html.light .home-page section:first-of-type .text-dark-300,
-  html.light .home-page section:first-of-type .text-dark-400,
-  html.light .home-page section:nth-of-type(4) .text-white,
-  html.light .home-page section:last-of-type .text-white {
+  /* Preserve white text in destination cards for both themes */
+  html.light .home-page section:nth-of-type(4) .text-white {
     color: white !important;
   }
 

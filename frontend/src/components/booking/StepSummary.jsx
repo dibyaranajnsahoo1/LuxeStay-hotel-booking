@@ -271,6 +271,11 @@ export default function StepSummary() {
                   <span key={m} className="text-xs px-2 py-0.5 bg-dark-800 rounded text-dark-400">{m}</span>
                 ))}
               </div>
+              <div className="mt-4 p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg text-xs text-blue-400 text-center">
+                <p className="font-semibold mb-1">Payment Testing Credentials</p>
+                <p>Card: 4100 2800 0000 1007</p>
+                <p>Exp: 04/29 | CVV: 123</p>
+              </div>
             </div>
           </div>
         </div>
